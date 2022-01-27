@@ -3,6 +3,13 @@
 // ONCONTEXTMENU:
 // oncontextmenu="return false" disable the right-click menu when clicking the mouse's right button
 
+function getLevel(size, mines) {
+  gLevel.size = size;
+  gLevel.mines = mines;
+  initGame();
+  return gLevel;
+}
+
 function buildBoard(size) {
   // Builds the board; Set mines at random locations; Call setMinesNegsCount(); Return the created board
   var board = [];
@@ -18,8 +25,6 @@ function buildBoard(size) {
       };
     }
   }
-  placeMines(board);
-
   return board;
 }
 
@@ -40,7 +45,8 @@ function renderBoard(board) {
   elContainer.innerHTML = strHTML;
 }
 
-// RANDOME CELL TO PLACE A MINE:
+
+// RANDOM CELL TO PLACE A MINE:
 function getRandomCell(board){
   const location = {
     i: getRandomIntInclusive(0, board.length-1),
@@ -49,10 +55,19 @@ function getRandomCell(board){
   return location; // an object with cell coordinates {i: [i], j :[j]}
 }
 
+
 // TIMER:
-function startTimer(){
-  
+function presentTimer() {
+  gGame.secsPassed = (Date.now() - gGame.timeStart) / 1000;
+  const elTimerSpan = document.querySelector(".timer span");
+  elTimerSpan.innerText = `${gGame.secsPassed.toFixed(0)}`;
 }
+
+function startTimer() {
+  gGame.timeStart = Date.now();
+  gGame.timerInterval = setInterval(presentTimer, 1000);
+}
+
 
 function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;

@@ -2,15 +2,14 @@ html, body {
   height: 100%;
   width: 100%;
   background-color: #202020;
-
 }
 
 .board-container {
-  margin: 20px auto; /* top right bottom left*/
+  margin: 20px auto;
 }
 
 table {
-  border: 5px solid black;
+  border: 5px solid #000000;
   margin: auto;
 }
 
@@ -19,13 +18,17 @@ table {
   height: 40px;
   text-align: center;
   align-items: center;
-  border: 3px solid black;
-  background-color: gray;
+  border: 3px solid #000000;
+  background-color: #808080;
 }
 
 .cell:hover{
   cursor: pointer;
-  border: 3px solid teal;
+  border: 3px solid #008080;
+}
+
+.expand {
+  background-color: #c3c1c1
 }
 
 img {
@@ -36,7 +39,6 @@ img {
 .btn-container {
   align-items: center;
   margin: auto;
-
 }
 
 .btn {
@@ -60,4 +62,9 @@ img {
 .btn:active {
   color: #000000;
   background-color: #b2dfdb;
+}
+
+.life, .timer, .mines {
+  color: #ffffff;
+  font-size: larger;
 }

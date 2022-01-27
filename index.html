@@ -12,11 +12,16 @@
   <div class="game-container">
     <h1 class="">MINESWEEPER</h1>
     <div class="btn-container">
-      <button class="btn" onclick="getLevel(this)">Easy</button>
-      <button class="btn" onclick="getLevel(this)">Pro</button>
-      <button class="btn" onclick="getLevel(this)">Expert</button>
+      <button class="btn" onclick="getLevel(4, 2)">Easy</button>
+      <button class="btn" onclick="getLevel(8, 12)">Pro</button>
+      <button class="btn" onclick="getLevel(12, 30)">Expert</button>
     </div>
-    <div class="timer">Time: <span>00:00</span></div>
+    <div class="dashboard">
+      <div class="life">Lives left: <span>3</span></div>
+      <div class="mines">Mines: <span></span></div>
+      <div class="reset-container"><button class="reset" onclick="restGame()"></button></div>
+      <div class="timer">Time: <span>0</span></div>
+    </div>
     <div class="board-container">
       <!-- board here -->
     </div>

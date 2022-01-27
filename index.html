@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minesweeper</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="initGame()" oncontextmenu="return false">
+  <!-- oncontextmenu="return false" disable the right-click menu when clicking the mouse's right button -->
+  <div class="game-container">
+    <h1 class="">MINESWEEPER</h1>
+    <div class="btn-container">
+      <button class="btn" onclick="getLevel(this)">Easy</button>
+      <button class="btn" onclick="getLevel(this)">Pro</button>
+      <button class="btn" onclick="getLevel(this)">Expert</button>
+    </div>
+    <div class="timer">Time: <span>00:00</span></div>
+    <div class="board-container">
+      <!-- board here -->
+    </div>
+  </div>
+  <script src="js/utilities.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

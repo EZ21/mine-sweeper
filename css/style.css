@@ -1,21 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   width: 100%;
   background-color: #202020;
+  display: flex;
+  justify-content: center;
+}
+/* font from www.onlinewebfonts.com */
+@import url(//db.onlinewebfonts.com/c/f59f945c803a46fe017610dbd1914db7?family=Aachen);
+
+@font-face {font-family: "Aachen"; src: url("//db.onlinewebfonts.com/t/f59f945c803a46fe017610dbd1914db7.eot"); src: url("//db.onlinewebfonts.com/t/f59f945c803a46fe017610dbd1914db7.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f59f945c803a46fe017610dbd1914db7.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f59f945c803a46fe017610dbd1914db7.woff") format("woff"), url("//db.onlinewebfonts.com/t/f59f945c803a46fe017610dbd1914db7.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f59f945c803a46fe017610dbd1914db7.svg#Aachen") format("svg"); } 
+
+h1{
+  font-family: aachen; /* font from www.onlinewebfonts.com */
+  font-size: 5rem;
+  color: #ff0000;
+  margin: 0;
 }
 
 .board-container {
-  margin: 20px auto;
+  display: flex;
+  justify-content: center; 
+  margin: 0 auto;
 }
 
 table {
+  table-layout: fixed;
+  height: 500px;
+  width: 500px;
   border: 5px solid #000000;
   margin: auto;
+}
+
+td {
+  line-height: 0px;
 }
 
 .cell {
   width: 40px;
   height: 40px;
+  font-family: aachen; /* font from www.onlinewebfonts.com */
   text-align: center;
   align-items: center;
   border: 3px solid #000000;
@@ -37,12 +64,47 @@ img {
 }
 
 .btn-container {
-  align-items: center;
+  display: flex;
+  justify-content: center; 
+  flex-direction: row;
+  justify-self: center;
   margin: auto;
+
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+.dashboard-2 {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  padding: 0 200px 0 200px;
+}
+
+.levels {
+  display: flex;
+  justify-content: center; 
+  cursor: pointer;
+  font-family: aachen; /* font from www.onlinewebfonts.com */
+  letter-spacing: 2px;
+  font-size: x-large;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+p {
+  display: inline-block;
+  margin: 0;
 }
 
 .btn {
   cursor: pointer;
+  font-family: aachen; /* font from www.onlinewebfonts.com */
+  letter-spacing: 2px;
   font-size: medium;
   font-weight: bold;
   color: #ffffff;
@@ -51,7 +113,7 @@ img {
   border-radius: 5px;
   width: 100px;
   height: 40px;
-  margin: 0;
+  margin: 0 5px;
 }
 
 .btn:hover {
@@ -64,7 +126,26 @@ img {
   background-color: #b2dfdb;
 }
 
+.reset-container {
+  display: flex;
+  justify-content: center; 
+  margin: 10px 0;
+}
+
+.reset {
+  height: 60px;
+  width: 60px;
+  font-size: 3rem;
+  background-color: #404040;
+  border: transparent;
+  border-radius: 5px;
+  margin: auto;
+}
+
 .life, .timer, .mines {
+  font-family: aachen; /* font from www.onlinewebfonts.com */
   color: #ffffff;
   font-size: larger;
+  letter-spacing: 2px;
+  margin: 0 auto;
 }

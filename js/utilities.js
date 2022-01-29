@@ -6,6 +6,10 @@
 function getLevel(size, mines) {
   gLevel.size = size;
   gLevel.mines = mines;
+  clearInterval(gGame.timerInterval);
+  gGame.timerInterval = null;
+  const elTimerSpan = document.querySelector(".timer span");
+  elTimerSpan.innerText = '0'
   initGame();
   return gLevel;
 }
@@ -17,7 +21,6 @@ function buildBoard(size) {
     board.push([]);
     for (var j = 0; j < size; j++) {
       board[i][j] = {
-        // individual cell object (instead of const cell, to prevent many pointers to one global variable):
         minesAroundCount: 0,
         isShown: false, // revealed or covered cell
         isMine: false, // contains a mine or not
@@ -45,16 +48,18 @@ function renderBoard(board) {
   elContainer.innerHTML = strHTML;
 }
 
-
-// RANDOM CELL TO PLACE A MINE:
+// RANDOME CELL TO PLACE A MINE:
 function getRandomCell(board){
   const location = {
     i: getRandomIntInclusive(0, board.length-1),
     j: getRandomIntInclusive(0, board.length-1),
   }
-  return location; // an object with cell coordinates {i: [i], j :[j]}
+  return location;
 }
 
+function getRandomIntInclusive(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 // TIMER:
 function presentTimer() {
@@ -66,9 +71,4 @@ function presentTimer() {
 function startTimer() {
   gGame.timeStart = Date.now();
   gGame.timerInterval = setInterval(presentTimer, 1000);
-}
-
-
-function getRandomIntInclusive(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
 }

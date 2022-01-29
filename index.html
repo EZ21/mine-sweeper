@@ -5,23 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minesweeper</title>
+  <link href="//db.onlinewebfonts.com/c/dab0cc5cf1a63e08c37c2c2c37ef64d2?family=Aachen" rel="stylesheet" type="text/css"/><!-- font from www.onlinewebfonts.com -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body onload="initGame()" oncontextmenu="return false">
   <!-- oncontextmenu="return false" disable the right-click menu when clicking the mouse's right button -->
   <div class="game-container">
-    <h1 class="">MINESWEEPER</h1>
+    <div class="h1-container">
+      <h1>MINESWEEPER</h1>
+    </div>
+    <p class="levels">CHOOSE LEVEL TO START</p>
     <div class="btn-container">
       <button class="btn" onclick="getLevel(4, 2)">Easy</button>
       <button class="btn" onclick="getLevel(8, 12)">Pro</button>
       <button class="btn" onclick="getLevel(12, 30)">Expert</button>
     </div>
     <div class="dashboard">
-      <div class="life">Lives left: <span>3</span></div>
-      <div class="mines">Mines: <span></span></div>
-      <div class="reset-container"><button class="reset" onclick="restGame()"></button></div>
-      <div class="timer">Time: <span>0</span></div>
+      <p class="life">Lives left: <span></span></p>
+      <div class="dashboard-2">
+        <p class="mines">Mines: <span></span></p>
+        <p class="timer">Time: <span>0</span></p>
+      </div>
     </div>
+    <div class="reset-container"><button class="reset" onclick="restGame()"></button></div>
     <div class="board-container">
       <!-- board here -->
     </div>
